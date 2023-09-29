@@ -1,0 +1,15 @@
+<html>
+<head>
+<script>
+function stampa() {
+var print=document.getElementById("lavoro").value
+document.getElementById("destinatario").innerHTML=print
+}
+</script>
+</head>
+<body>
+<input type="testo" id="lavoro">
+<input type="bottone" value="Cliccare" onclick="stampa()">
+<p id="destinatario"></p>
+</body>
+</html>

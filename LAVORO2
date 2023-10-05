@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>es 1 input type</title>
+  </head>
+  <body>
+    <h3>check box</h3>
+    Inserire il nome dell'alunno<br>
+    <input type="text" id="nome">
+     <br>
+    Inserire il cognome dell'alunno<br>
+     <input type="text1" id="cognome">
+      <br>
+     Selezionare le materie della pagella
+     <br>
+     <input type="checkbox" id="boxdiitaliano" name="italiano" value="italiano">
+     <label for="boxdiitaliano">italiano</label><br>
+
+  
+  <input type="checkbox" id="boxdimatematica" name="matematica" value="matematica">
+  <label for="boxdimatematica"> matematica</label><br>
+
+  <input type="checkbox" id="boxdistoria"  value="storia">
+
+  <label for="boxdistoria"> storia</label><br>
+  
+  <input type="checkbox" id="boxdiTPSIT"  value="tps">
+ 
+  
+    <label for="boxdiTPSIT"> tps</label><br>
+
+  <input type="checkbox" id="boxdiinformatica"  value="informatica">
+  
+  <label for="boxdiinformatica"> informatica</label><br>
+    
+    <input type="checkbox" id="boxdiinglese"  value="inglese">
+  
+  
+    <label for="boxdiinglese">inglese</label><br>
+        
+     <input type="button" id=" btn" value="invia" onclick="visualizza()">
+     <h3>Dati selezionati:</h3>
+    <p id="datiStampati"></p>
+    <script>
+        function visualizza() {
+            var nome = document.getElementById("nome").value;
+            var cognome = document.getElementById("cognome").value;
+            var materie ="";
+            
+            var boxdiitaliano = document.getElementById("boxdiitaliano");
+            if(boxdiitaliano.checked == true){
+            	materie= materie+" "+boxdiitaliano.value;
+            }
+            var boxdimatematica = document.getElementById("boxdimatematica");
+            if(boxdimatematica.checked == true){
+            	materie= materie+" "+boxdimatematica.value;
+            }
+            var boxdistoria = document.getElementById("boxdistoria");
+            if(boxdistoria.checked == true){
+            	materie= materie+" "+boxdistoria.value;
+                }
+                var boxdiTPSIT = document.getElementById("boxdiTPSIT");
+            if(boxdiTPSIT.checked == true){
+            	materie= materie+" "+boxdiTPSIT.value;
+                }
+            var boxdiinformatica = document.getElementById("boxdiinformatica");
+            if(boxdiinformatica.checked == true){
+            	materie= materie+" "+boxdiinformatica.value;
+                }
+                var boxdiinglese = document.getElementById("boxdiinglese");
+            if(boxdiinglese.checked == true){
+            	materie= materie+" "+boxdiinglese.value;
+                }
+                
+                
+             var datiDaStampare = "Nome: " + nome + "<br>Cognome: " + cognome+"<br>materie valutate:"+ materie;
+            document.getElementById("datiStampati").innerHTML = datiDaStampare;
+        
+            }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Convertitore Decimale-Binario</title>
+</head>
+<body>
+  <h1>Conversione decimale binario</h1>
+
+  <label for="decimale">Inserisci un numero:</label>
+  <input type="text" id="decimale">
+  <button onclick="convertiDecimaleInBinario()">Converti in Binario</button>
+
+  <p>Il numero trasformato in binario è: <span id="binario"></span></p>
+
+  <script>
+    function convertiDecimaleInBinario() {
+      const decimale = parseInt(document.getElementById('decimale').value, 10);
+     
+      }
+
+      const binario = decimale.toString(2);
+      document.getElementById('binario').textContent = binario;
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+

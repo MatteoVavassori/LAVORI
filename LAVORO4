@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>Calcolatore Bitwise</title>
+</head>
+<body>
+    <h1>Calcolatore Bitwise</h1>
+    <p>Inserisci due numeri (0-255) e fai clic su un pulsante per eseguire un'operazione bit a bit.</p>
+
+    <input type="number" id="number1" min="0" max="255" placeholder="Numero 1">
+    <input type="number" id="number2" min="0" max="255" placeholder="Numero 2">
+    <br><br>
+
+    <button onclick="calculateBitwise('and')">AND</button>
+    <button onclick="calculateBitwise('or')">OR</button>
+    <button onclick="calculateBitwise('xor')">XOR</button>
+
+    <h2>Risultato:</h2>
+    <p id="result"></p>
+
+    <script>
+        function calculateBitwise(operation) {
+            const num1 = parseInt(document.getElementById('number1').value);
+            const num2 = parseInt(document.getElementById('number2').value);
+
+            if (isNaN(num1) || isNaN(num2)) {
+                alert('Inserisci numeri validi.');
+                return;
+            }
+
+            const result = (operation === 'and') ? (num1 & num2) :
+                          (operation === 'or') ? (num1 | num2) :
+                          (operation === 'xor') ? (num1 ^ num2) : 0;
+
+            document.getElementById('result').textContent = `Risultato: ${result}`;
+        }
+    </script>
+</body>
+</html>

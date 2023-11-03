@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>es 1 input type</title>
+</head>
+<body>
+    <h3>check box</h3>
+    Inserire il nome dell'alunno<br>
+    <input type="text" id="nome">
+    <br>
+    Inserire il cognome dell'alunno<br>
+    <input type="text" id="cognome">
+    <br>
+    Inserire l'indirizzo di residenza<br>
+    <input type="text" id="indirizzo">
+    <br>
+    Inserire la città di residenza<br>
+    <input type="text" id="citta">
+    <br>
+    Selezionare la provincia di residenza<br>
+    <select id="provincia">
+            <option value="MI">Milano</option>
+            <option value="RM">Roma</option>
+            <option value="NA">Napoli</option>
+            <option value="TO">Torino</option>
+            <option value="VE">Venezia</option>
+            <option value="BO">Bologna</option>
+            <option value="CT">Catania</option>
+            <option value="FI">Firenze</option>
+            <option value="PA">Palermo</option>
+            <option value="GE">Genova</option>
+            <option value="BZ">Bolzano</option>
+            <option value="TN">Trento</option>
+            <option value="VR">Verona</option>
+            <option value="MI">Brescia</option>
+            <option value="CO">Como</option>
+            <option value="MB">Monza e Brianza</option>
+            <option value="CZ">Catanzaro</option>
+            <option value="SA">Salerno</option>
+            <option value="RE">Reggio Emilia</option>
+            <option value="LE">Lecce</option>
+        </select>
+        
+        <!-- Aggiungi altre opzioni per altre province -->
+    </select>
+    <br>
+    Selezionare il sesso dell'alunno<br>
+    <input type="radio" id="sesso-maschile" name="sesso" value="Maschile">
+    <label for="sesso-maschile">Maschile</label>
+    <input type="radio" id="sesso-femminile" name="sesso" value="Femminile">
+    <label for="sesso-femminile">Femminile</label>
+    <input type="radio" id="sesso-nonBinario" name="sesso" value="nonBinario">
+    <label for="sesso-nonBinario"> non binario</label>
+    <input type="radio" id="sesso-altro" name="sesso" value="Altro">
+    <label for="sesso-altro">Altro</label>
+
+    <br>
+    Selezionare le materie della pagella<br>
+    <input type="checkbox" id="boxdiitaliano" name="italiano" value="italiano">
+    <label for="boxdiitaliano">italiano</label><br>
+  
+    <input type="checkbox" id="boxdimatematica" name="matematica" value="matematica">
+    <label for="boxdimatematica"> matematica</label><br>
+
+    <input type="checkbox" id="boxdistoria" name="storia" value="storia">
+    <label for="boxdistoria"> storia</label><br>
+    
+    <input type="checkbox" id="boxdiTPSIT" name="tps" value="tps">
+    <label for="boxdiTPSIT"> tps</label><br>
+
+    <input type="checkbox" id="boxdiinformatica" name="informatica" value="informatica">
+    <label for="boxdiinformatica"> informatica</label><br>
+    
+    <input type="checkbox" id="boxdiinglese" name="inglese" value="inglese">
+    <label for="boxdiinglese">inglese</label><br>
+        
+    <input type="button" id="btn" value="invia" onclick="visualizza()">
+    <h3>Dati selezionati:</h3>
+    <p id="datiStampati"></p>
+    
+    <script>
+        function visualizza() {
+            var nome = document.getElementById("nome").value;
+            var cognome = document.getElementById("cognome").value;
+            var indirizzo = document.getElementById("indirizzo").value;
+            var citta = document.getElementById("citta").value;
+            var provincia = document.getElementById("provincia").value;
+            var sesso = document.querySelector('input[name="sesso"]:checked').value;
+            var materie = "";
+
+            var boxdiitaliano = document.getElementById("boxdiitaliano");
+            if (boxdiitaliano.checked == true) {
+                materie = materie + " " + boxdiitaliano.value;
+            }
+            var boxdimatematica = document.getElementById("boxdimatematica");
+            if (boxdimatematica.checked == true) {
+                materie = materie + " " + boxdimatematica.value;
+            }
+            var boxdistoria = document.getElementById("boxdistoria");
+            if (boxdistoria.checked == true) {
+                materie = materie + " " + boxdistoria.value;
+            }
+            var boxdiTPSIT = document.getElementById("boxdiTPSIT");
+            if (boxdiTPSIT.checked == true) {
+                materie = materie + " " + boxdiTPSIT.value;
+            }
+            var boxdiinformatica = document.getElementById("boxdiinformatica");
+            if (boxdiinformatica.checked == true) {
+                materie = materie + " " + boxdiinformatica.value;
+            }
+            var boxdiinglese = document.getElementById("boxdiinglese");
+            if (boxdiinglese.checked == true) {
+                materie = materie + " " + boxdiinglese.value;
+            }
+
+            var datiDaStampare = "Nome: " + nome + "<br>Cognome: " + cognome + "<br>Indirizzo: " + indirizzo + "<br>Città: " + citta + "<br>Provincia: " + provincia + "<br>Sesso: " + sesso + "<br>Materie valutate:" + materie;
+            document.getElementById("datiStampati").innerHTML = datiDaStampare;
+        }
+    </script>
+</body>
+</html>

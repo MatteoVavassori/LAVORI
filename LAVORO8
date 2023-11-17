@@ -1,0 +1,62 @@
+<head>
+<title>calcolatrice</title>
+</head>
+<body>
+ <h3>calcolatrice</h3>
+     <input type="text" id="n1">	    <br>
+
+	     <input type="text" id="n2"> <br>
+		<input type="button" value="+" onclick=somma()> 
+		<input type="button" value="-" onclick=sottrazione()> 
+		<input type="button" value="*" onclick=moltiplicazione()> 
+		<input type="button" value="/" onclick=divisione()> 
+		<input type="button" value="%" onclick=modulo()> 
+		<input type="button" value="^" onclick=potenza()>
+		
+<p id="p1"></p1>
+
+		     <script>
+			 function somma()
+			 {
+			  var somma = parseInt(document.getElementById("n1").value)+parseInt(document.getElementById("n2").value);
+			  document.getElementById("p1").innerHTML= somma;
+			 }
+			 function sottrazione()
+			 {
+			 var sottrazione = parseInt(document.getElementById("n1").value)-parseInt(document.getElementById("n2").value);
+			 document.getElementById("p1").innerHTML= sottrazione;
+
+			 }
+			 function moltiplicazione()
+			 {
+			 var moltiplicazione = parseInt(document.getElementById("n1").value)*parseInt(document.getElementById("n2").value);
+			 document.getElementById("p1").innerHTML= moltiplicazione;
+
+			 }
+			 function divisione()
+			 {
+			 var divisione = parseInt(document.getElementById("n1").value)/parseInt(document.getElementById("n2").value);
+			 document.getElementById("p1").innerHTML= divisione;
+
+			 }
+                         function modulo()
+			 {
+			 var resto = parseInt(document.getElementById("n1").value)%parseInt(document.getElementById("n2").value);
+			 document.getElementById("p1").innerHTML= resto;
+
+			 }
+			function potenza()
+			{
+			var potenza = Math.pow(parseInt(document.getElementById("n1").value),parseInt(document.getElementById("n2").value));
+			 document.getElementById("p1").innerHTML= potenza;
+			}
+			</script>
+
+
+
+
+
+
+
+</body>
+</html>

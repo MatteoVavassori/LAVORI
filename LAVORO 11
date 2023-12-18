@@ -1,0 +1,22 @@
+<html >
+<head>
+    <meta charset="anagrafica">
+    <meta name="anagrafica" content="width=device-width, initial-scale=1.0">
+    <title>Stampa Dati</title>
+</head>
+<body>
+    <h2>anagrafica 3.1</h2>
+    <p>Nome: <span id="nomeStampa"></span></p>
+    <p>Cognome: <span id="cognomeStampa"></span></p>
+
+    <script>
+        
+        var nome = localStorage.getItem('nome');
+        var cognome = localStorage.getItem('cognome');
+
+        
+        document.getElementById('nomeStampa').innerText = nome;
+        document.getElementById('cognomeStampa').innerText = cognome;
+    </script>
+</body>
+</html>

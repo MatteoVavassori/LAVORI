@@ -1,0 +1,28 @@
+<html >
+<head>
+    <meta charset="anagrafica">
+    <meta name="anagrafica" content="width=device-width, initial-scale=1.0">
+    <title>Anagrafica 3.1</title>
+</head>
+<body>
+    <h2>anagarfica 3.1</h2>
+    <form id="anagraficaForm">
+        Nome: <input type="text" id="nome"><br>
+        Cognome: <input type="text" id="cognome"><br>
+        <input type="button" value="stampa" onclick="salvaDati()">
+    </form>
+
+    <script>
+        function salvaDati() {
+            var nome = document.getElementById('nome').value;
+            var cognome = document.getElementById('cognome').value;
+
+            
+            localStorage.setItem('nome', nome);
+            localStorage.setItem('cognome', cognome);
+
+            window.location.href = 'Stampa.html';
+        }
+    </script>
+</body>
+</html>

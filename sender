@@ -1,0 +1,137 @@
+<html>
+  <head>
+    <title>es 1 input type</title>
+  </head>
+  <body>
+    <h3>check box</h3>
+    Inserire il nome dell'alunno<br>
+    <input type="text" id="nome">
+     <br>
+    Inserire il cognome dell'alunno<br>
+     <input type="text1" id="cognome">
+      <br>
+     Inserire l'indirizzo dell'alunno<br>
+     <input type="text1" id="indirizzo">
+      <br>
+   
+  <p>specifica il tuo sesso:</p>
+   <select id ="radiobutton"><br>
+  <input type="radio" id="maschio" name="sesso" value="maschio">
+  <label for="maschio">maschio</label><br>
+  <input type="radio" id="femmina" name="sesso" value="femmina">
+  <label for=femmina">femmina</label><br>
+  <input type="radio" id="altro" name="sesso" value="altro">
+  <label for="altro">altro</label>
+
+   <br>
+   <br>
+
+ <p>specifica la tua provincia:</p>
+  <select id ="listbox">
+    <option value="Brescia">Brescia</option>
+    <option value="Bergamo">Bergamo</option>
+    <option value="Como">Como</option>
+    <option value="Cremona">Cremona</option>
+    <option value="Lecco">Lecco</option>
+    <option value="Lodi">Lodi</option>
+    <option value="Mantova">Mantova</option>
+    <option value="Milano">Milano</option>
+    <option value="Monza-brianza">Monza-brianza</option>
+    <option value="Pavia">Pavia</option>
+    <option value="Sondrio">Sondrio</option>
+    <option value="Varese">Varese</option>
+  </select>
+
+<br>
+<br>
+Selezionare le materie in cui si ha già una valutazione
+     <br>
+
+</div>
+ <br>
+ <input type="checkbox" id="italiano" name="italiano" value="italiano">
+     <label for="italiano">italiano</label><br>
+ 
+  <input type="checkbox" id="matematica" name="matematica" value="matematica">
+  <label for="matematica"> matematica</label><br>
+
+<input type="checkbox" id="storia"  value="storia">
+
+ <label for="storia"> storia</label><br>
+ 
+ <input type="checkbox" id="TPSIT"  value="tps">  
+ 
+ <label for="TPSIT"> tps</label><br>
+
+ <input type="checkbox" id="informatica"  value="informatica">
+ 
+ <label for="informatica"> informatica</label><br>
+   
+  <input type="checkbox" id="inglese"  value="inglese">
+ 
+ 
+    <label for="inglese">inglese</label><br>
+       
+     <input type="button" id=" btn" value="invia" onclick="ls()">
+     <h3>Dati selezionati:</h3>
+    <p id="datiStampati"></p>
+
+    <script>
+        function ls() {
+          const array=[];
+            var nome = document.getElementById("nome").value;
+            var cognome = document.getElementById("cognome").value;
+            var materie ="";
+            var indirizzo =document.getElementById("indirizzo").value;
+            var provincia =document.getElementById("listbox").value;
+            var sesso ="";
+
+            var italiano = document.getElementById("italiano");
+            if(italiano.checked == true){
+            materie= materie+" "+italiano.value;
+            }
+            var matematica = document.getElementById("matematica");
+            if(matematica.checked == true){
+            materie= materie+" "+matematica.value;
+            }
+            var storia = document.getElementById("storia");
+            if(storia.checked == true){
+            materie= materie+" "+storia.value;
+                }
+                var TPSIT = document.getElementById("TPSIT");
+            if(TPSIT.checked == true){
+            materie= materie+" "+TPSIT.value;
+                }
+            var informatica = document.getElementById("informatica");
+            if(informatica.checked == true){
+            materie= materie+" "+informatica.value;
+                }
+                var inglese = document.getElementById("inglese");
+            if(inglese.checked == true){
+            materie= materie+" "+inglese.value;
+               }
+                var maschio = document.getElementById("maschio");
+		if(maschio.checked == true){
+            	sesso= sesso+" "+maschio.value;
+                }
+                 var femmina = document.getElementById("femmina");
+		if(femmina.checked == true){
+            	sesso= sesso+" "+femmina.value;
+                }
+                var altro = document.getElementById("altro");
+		if(altro.checked == true){
+            	sesso= sesso+" "+altro.value;
+                }
+            
+                array.push(nome);
+                array.push(cognome);
+                array.push(materie);
+                array.push(indirizzo);
+                array.push(provincia);
+                array.push(sesso);
+localStorage.setItem("dati", array)
+document.location.href="receiver.html"
+            }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>espressioni regolari</title>
+</head>
+
+<body>
+    <script>
+        function check()
+        {
+            let email=document.getElementById("email").value;
+            let pattern=/@/g;
+            let result = stringa.match(pattern);
+            if(result=="@")
+            {
+                document.getElementById("testo").innerHTML = "la email è valida";
+            }
+            else
+           {
+                document.getElementById("testo").innerHTML = "la email non è valida";
+           }
+       }
+    </script>
+
+<label for="email">Inserire email:</label><br>
+	<input type="text" id="email" name="email"><br>
+
+    <br><input type="button" value="Invia" onclick=controllo()>
+
+    <p id="testo"></p>
+
+</body>
+</html>

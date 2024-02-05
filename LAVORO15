@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Aggiorna Paragrafo</title>
+</head>
+<body>
+
+  <label for="numeroParagrafo">Numero Paragrafo (1-10):</label>
+  <input type="number" id="numeroParagrafo" min="1" max="10">
+
+  <label for="testoParagrafo">Testo da Inserire:</label>
+  <input type="text" id="testoParagrafo">
+
+  <button onclick="aggiornaParagrafo()">Aggiorna Paragrafo</button>
+
+  <div id="contenitoreParagrafi">
+   
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+  </div>
+
+  <script>
+    function aggiornaParagrafo() {
+     
+      var numeroParagrafo = document.getElementById("numeroParagrafo").value;
+      var testoParagrafo = document.getElementById("testoParagrafo").value;
+
+   
+      if (numeroParagrafo >= 1 && numeroParagrafo <= 10) {
+       
+        var paragrafo = document.getElementsByTagName("p")[numeroParagrafo - 1];
+        paragrafo.innerHTML = testoParagrafo;
+      } else {
+        alert("Inserisci un numero di paragrafo valido (da 1 a 10).");
+      }
+    }
+  </script>
+
+</body>
+</html>

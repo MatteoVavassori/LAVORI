@@ -1,0 +1,84 @@
+
+<html>
+  <head>
+    <script>
+    function eliminaUltimoProdottoAggiunto(idUltimoProdottoAggiunto)
+    {
+      const prodottoAggiunto = document.getElementById(idUltimoProdottoAggiunto);
+      if (prodottoAggiunto.lastElementChild)
+      {
+          prodottoAggiunto.lastElementChild.remove();
+      }
+}
+  function aggiungiParagrafo()
+{
+    let contenuto1 = document.createElement("div");
+        let contenuto2 = document.createElement("div");
+        let contenuto3 = document.createElement("div");
+        let testo1 = document.createTextNode(document.getElementById("paragrafo1").value);
+        let testo2 = document.createTextNode(document.getElementById("paragrafo2").value);
+        let testo3 = document.createTextNode(document.getElementById("paragrafo3").value);
+        contenuto1.appendChild(testo1);
+        contenuto2.appendChild(testo2);
+        contenuto3.appendChild(testo3);
+        document.getElementById("texto1").style.backgroundColor = "red";
+document.getElementById("texto1").style.border = "2px solid green";
+        document.getElementById("texto2").style.backgroundColor = "orange";
+        document.getElementById("texto2").style.border = "2px solid lightgreen";
+        document.getElementById("texto3").style.backgroundColor = "yellow";
+        document.getElementById("texto3").style.border = "2px solid darkgreen";
+        document.getElementById("texto1").appendChild(contenuto1);
+        document.getElementById("texto2").appendChild(contenuto2);
+        document.getElementById("texto3").appendChild(contenuto3);
+       
+       
+        localStorage.setItem('paragrafo1', document.getElementById("paragrafo1").value);
+localStorage.setItem('paragrafo2', document.getElementById("paragrafo2").value);
+localStorage.setItem('paragrafo3', document.getElementById("paragrafo3").value);
+        window.location.href = 'vediEdEliminaDatiDellaSpesa.html';
+       
+    }
+    </script>
+    <style>
+         
+       
+          p1
+          {
+              font-family: Monaco;
+              font-size: 110%;
+              color: darkorange;
+          }
+          p2
+          {
+              font-family: Monaco;
+              font-size: 110%;
+              color: cornflowerblue;
+          }
+    </style>
+  </head>
+  <body>
+  <h1>Lista della spesa</h1>
+
+  <br><br>
+  <input type="text" id="paragrafo1">
+  <p1>: prodotti del fresco </p1>
+  <br><br>
+  <input type="text" id="paragrafo2">
+  <p1>: prodotti del freezer</p1>
+  <br><br>
+  <input type="text" id="paragrafo3">
+  <p1>: prodotti a temperatura ambiente</p1>
+  <br><br><br>
+  <button type="button" id="Pulsante" onclick="aggiungiParagrafo()" value="aggiungiUnNuovoParagrafo">Aggiungi alla lista</button>
+  <br><br><br><br><br>
+  <p2>Nella lista, in quale tipologia Ã¨ il prodotto che hai acquistato?</p2>
+  <button type="button" onclick="eliminaUltimoProdottoAggiunto('texto1')">fresco</button>
+  <button type="button" onclick="eliminaUltimoProdottoAggiunto('texto2')">freezer</button>
+  <button type="button" onclick="eliminaUltimoProdottoAggiunto('texto3')">tem.ambiente</button>
+  <br><br>
+  <div id="texto1"></div>
+  <div id="texto2"></div>
+  <div id="texto3"></div>
+  <br><br><br><br><br>
+  </body>
+</html>

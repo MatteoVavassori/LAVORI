@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        h1 {font-family:arial; font-size:260%; color:black;}
+        h3, p {font-family:arial; font-size:100%; color:black;}
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <div id="aggiungiElemento">
+        <h1>Esercizio Lista della spesa:</h1>
+        <h3>Pallavicini Matteo 4Dinf.</h3>
+        <br><br>
+        <input type="text" id="elementoInput" placeholder="Inserisci un elemento della spesa">
+        <button type="button" onclick="aggiungiElemento()">Aggiungi alla lista</button>
+        <br><br>
+    </div>
+
+    <div id="rimuoviElemento" class="hidden">
+        <h1>Esercizio Lista della spesa:</h1>
+        <h3>Pallavicini Matteo 4Dinf.</h3>
+        <br><br>
+        <ul id="listaSpesa"></ul>
+        <br><br>
+    </div>
+
+    <script>
+        let numeroElementi = 0;
+
+        function aggiungiElemento() 
+        {
+            numeroElementi++;
+            const testoElemento = document.getElementById("elementoInput").value;
+            localStorage.setItem("elemento" + numeroElementi, testoElemento);
+            mostraLista();
+        }
+
+        function rimuoviElemento(idElemento) 
+        {
+            const elemento = document.getElementById("elemento" + idElemento);
+            elemento.remove();
+
+            localStorage.removeItem("elemento" + idElemento);
+        }
+
+        function mostraLista() 
+        {
+            const listaDiv = document.getElementById("rimuoviElemento");
+            const lista = document.getElementById("listaSpesa");
+            lista.innerHTML = '';
+
+            for (let i = 1; i <= localStorage.length; i++) 
+            {
+                const testoElemento = localStorage.getItem("elemento" + i);
+                if (testoElemento) 
+                {
+                    const nuovoElemento = document.createElement("li");
+                    nuovoElemento.innerHTML = testoElemento + ' <button onclick="rimuoviElemento(' + i + ')">Rimuovi</button>';
+                    nuovoElemento.id = "elemento" + i;
+                    lista.appendChild(nuovoElemento);
+                }
+            }
+
+            document.getElementById("aggiungiElemento").classList.add('hidden');
+            listaDiv.classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>

@@ -2,15 +2,15 @@
 <html>
 <head>
     <style>
-        h1 {font-family:arial; font-size:260%; color:black;}
-        h3, p {font-family:arial; font-size:100%; color:black;}
+        h1 {font-family:sans-serif; font-size:260%; color:black;}
+        h3, p {font-family:sans-serif; font-size:100%; color:black;}
         .hidden { display: none; }
     </style>
 </head>
 <body>
     <div id="aggiungiElemento">
         <h1>Esercizio Lista della spesa:</h1>
-        <h3>Pallavicini Matteo 4Dinf.</h3>
+        <h3>Vavassori Matteo 4Dinf.</h3>
         <br><br>
         <input type="text" id="elementoInput" placeholder="Inserisci un elemento della spesa">
         <button type="button" onclick="aggiungiElemento()">Aggiungi alla lista</button>
@@ -19,7 +19,7 @@
 
     <div id="rimuoviElemento" class="hidden">
         <h1>Esercizio Lista della spesa:</h1>
-        <h3>Pallavicini Matteo 4Dinf.</h3>
+        <h3>Vavassori Matteo 4Dinf.</h3>
         <br><br>
         <ul id="listaSpesa"></ul>
         <br><br>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        h1 {font-family:cursive; font-size:200%; color:blue;}
+        h3, p {font-family:fantasy; font-size:90%; color:green;}
+    </style>
+    <script>
+        window.onload = function() {
+            for (let i = 1; i <= localStorage.length; i++) {
+                const testoElemento = localStorage.getItem("elemento" + i);
+                if (testoElemento) {
+                    const lista = document.getElementById("listaSpesa");
+                    const nuovoElemento = document.createElement("li");
+                    nuovoElemento.innerHTML = testoElemento + ' <button onclick="rimuoviElemento(' + i + ')">Rimuovi</button>';
+                    nuovoElemento.id = "elemento" + i;
+                    lista.appendChild(nuovoElemento);
+                }
+            }
+        }
+
+        function rimuoviElemento(idElemento) 
+        {
+            const elemento = document.getElementById("elemento" + idElemento);
+            elemento.remove();
+
+            localStorage.removeItem("elemento" + idElemento);
+        }
+    </script>
+</head>
+<body>
+    <h1 style="font-family: cursive; font-size: 200%; color: blue;">Esercizio Lista della spesa:</h1>
+    <h3 style="font-family: fantasy; font-size: 90%; color: green;">Vavassori Matteo 4Dinf.</h3>
+    <br><br>
+    <ul id="listaSpesa"></ul>
+    <br><br>
+</body>
+</html>

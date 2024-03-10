@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <h1>Lista della spesa</h1>
+    <body>
+      
+        <br><br>
+        <input type="text" id="paragrafo1">
+        <br><br><br>
+      
+    <button type="button" id="Pulsante" onclick="aggiungiParagrafo()" value="Aggiungi">Aggiungi</button>
+    <br><br>
+    <button type="button" id="Pulsante2" onclick="invia()" value="Invia">Invia</button>
+    <br><br><br>
+    <div id="testo1"></div>
+    <div id="bottone" onclick="aggiungiParagrafo()"></div>
+    <br><br><br><br><br>
+
+    
+    <script>
+    
+    const array=[];
+  
+  function aggiungiParagrafo()
+{
+        let contenuto1 = document.createElement("div");
+        let contenuto2 = document.createElement("button");
+        let contenuto3 = document.createElement("input");
+        let testo1 = document.createTextNode(document.getElementById("paragrafo1").value);
+        contenuto1.appendChild(testo1);
+        document.getElementById("testo1").appendChild(contenuto1);
+        document.getElementById("bottone").appendChild(contenuto2);
+        document.getElementById("testo1").appendChild(contenuto3);
+        document.getElementById("testo1").style.backgroundColor = "green";
+        document.getElementById("testo1").style.border = "2px solid green";
+       
+        array.push(paragrafo1.value);
+ 
+    }
+
+    function invia()
+    {
+        localStorage.setItem("array",array);
+        window.location.href = 'stampaSpesa.html';
+    }
+    </script>
+  </head>
+
+  </body>
+</html>

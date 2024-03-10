@@ -1,0 +1,13 @@
+<html>
+<body>
+<h2>Elementi aggiunti</h2>
+<div id="printDati"></div> 
+<p id="paragrafo"></p>
+
+<script>
+document.getElementById("printDati").innerHTML=localStorage.getItem("array");
+</script>
+
+</body>
+
+</html

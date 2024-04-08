@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>SIMBOLO OLIMPIADI</title>
+</head>
+<body>
+
+<canvas id="myCanvas" width="2000" height="1000"
+style="border:1px solid #d3d3d3;">
+</canvas>
+
+<script>
+   
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, canvas.width, canvas.height); 
+    ctx.beginPath();
+    ctx.arc(40, 50, 30, 0, 2 * Math.PI); 
+    ctx.strokeStyle = "#0000FF"; 
+    ctx.lineWidth = 5;
+    ctx.stroke();
+    
+    ctx.beginPath();
+    ctx.arc(100, 50, 30, 0, 2 * Math.PI); 
+    ctx.strokeStyle = "#000000";
+    ctx.lineWidth = 5;
+    ctx.stroke();
+    
+    ctx.beginPath();
+    ctx.arc(160, 50, 30, 0, 2 * Math.PI); 
+    ctx.strokeStyle = "#FF0000"; 
+    ctx.lineWidth = 5;
+    ctx.stroke();
+    
+    ctx.beginPath();
+    ctx.arc(70, 80, 30, 0, 2 * Math.PI);
+    ctx.strokeStyle = "#FFFF00";
+    ctx.lineWidth = 5;
+    ctx.stroke();
+    
+    ctx.beginPath();
+    ctx.arc(130, 80, 30, 0, 2 * Math.PI);
+    ctx.strokeStyle = "#008000"; 
+    ctx.lineWidth = 5;
+    ctx.stroke();
+    
+    ctx.closePath();
+
+
+
+</script>
+
+</body>
+</html>

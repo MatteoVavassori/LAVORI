@@ -1,0 +1,56 @@
+<html>
+<head>
+    <title>Selezione Multipla e Radio Button</title>
+    <style>
+        p {
+            font-size: 16px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Selezione Multipla e Radio Button</h1>
+    <p id="paragrafo">Testo</p>
+
+    <label for="colorSelect">Seleziona un colore:</label>
+    <select id="colorSelect" onchange="changeTextColor()">
+        <option value="black">Nero</option>
+        <option value="blue">Blu</option>
+        <option value="red">Rosso</option>
+        <option value="green">Verde</option>
+    </select>
+
+    <label for="smallFont">Piccolo</label>
+    <input type="radio" id="smallFont" name="fontSize" value="small" onclick="changeFontSize('small')">
+    <label for="mediumFont">Medio</label>
+    <input type="radio" id="mediumFont" name="fontSize" value="medium" onclick="changeFontSize('medium')">
+    <label for="largeFont">Grande</label>
+    <input type="radio" id="largeFont" name="fontSize" value="large" onclick="changeFontSize('large')">
+
+    <script>
+        function changeTextColor() {
+            const colorSelect = document.getElementById("colorSelect");
+            const selectedColor = colorSelect.value;
+            const paragrafo = document.getElementById("paragrafo");
+            paragrafo.style.color = selectedColor;
+        }
+
+        function changeFontSize(size) {
+            const paragrafo = document.getElementById("paragrafo");
+            switch (size) {
+                case "small":
+                    paragrafo.style.fontSize = "14px";
+                    break;
+                case "medium":
+                    paragrafo.style.fontSize = "16px";
+                    break;
+                case "large":
+                    paragrafo.style.fontSize = "18px";
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

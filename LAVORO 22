@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <script>
+        function creaTabellaDinamica()
+            {
+            let righe = document.forms["frmModulo"]["righe"].value;
+                let colonne = document.forms["frmModulo"]["colonne"].value;
+                let soluzione="";
+                for(let i=1; i<=righe; i++)
+                {
+                soluzione = soluzione + "<tr>";
+                    for(let j=1; j<=colonne; j++)
+                    {
+                    risultato = Math.ceil(Math.random()*100);
+                        soluzione = soluzione + "<td>" + risultato + "</td>";
+                    }
+                soluzione = soluzione + "</tr>";
+                }
+                document.getElementById("tabella").innerHTML = soluzione;
+            }
+        </script>
+        <style>
+            h1
+            {
+                font-family: "Brush Script MT";
+                font-size: 350%;
+                color: red;
+            }
+            h3
+            {
+                font-family: Georgia;
+                font-size: 130%;
+                color: coral;
+            }
+        </style>
+    </head>
+    <body>
+    <h1>Tabella dinamica</h1>
+        <h3>di Matteo Vavassori 4^D inf.</h3>
+        <br><br><br>
+        <form name="frmModulo">
+        <table>
+        <tr><td> Inserisci il numero delle righe: </td> <td><input type=text name="righe"> </td></tr>
+            <tr><td> Inserisci il numero delle colonne: </td> <td><input type=text name="colonne"> </td></tr>
+        </table>
+        <br>
+        <button type="button" onClick="creaTabellaDinamica()"> Crea questa tabella con righe e colonne che scegli tu </button>
+        <br>
+        </form>
+        <table id="tabella" border=2>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+{
+   "magazzino":[
+      {
+         "nome":"pizza",
+         "categoria":"cibo",
+         "prezzo":7,
+         "quantita":40,
+         "img": "https://latteriasorrentina.com/wp-content/uploads/2019/06/come-fare-la-vera-pizza-1764x882.jpg"
+      },
+      {
+         "nome":"carne rossa",
+         "categoria":"carne",
+         "prezzo":8,
+         "quantita":19,
+         "img": "https://wips.plug.it/cips/paginegialle.it/magazine/cms/2018/07/40290627_s.jpg?w=744&h=418&a=c"
+
+      },
+      {
+         "nome":"mela",
+         "categoria":"frutta",
+         "prezzo":1,
+         "quantita":144,
+         "img": "https://media.paginemediche.it/benessere/alimentazione-e-dieta/mela-la-salute-in-un-frutto/7185-mela-la-salute-in-un-frutto-1200-900.jpg"
+
+      },
+      {
+         "nome":"merluzzo",
+         "categoria":"pesce",
+         "prezzo":9,
+         "quantita":23,
+         "img": "https://lamarisqueria.it/wp-content/uploads/2021/11/merluzzo-al-banco-marisqueria.jpg"
+      },
+      {
+         "nome":"spaghetti",
+         "categoria":"pasta",
+         "prezzo":1,
+         "quantita":156,
+         "img": "https://d21mug5vzt7ic2.cloudfront.net/s24/138685/resize/138685_1.jpg"
+      },
+      {
+         "nome":"coca cola",
+         "categoria":"bibite",
+         "prezzo":2,
+         "quantita":48,
+         "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/15-09-26-RalfR-WLC-0098_-_Coca-Cola_glass_bottle_%28Germany%29.jpg/800px-15-09-26-RalfR-WLC-0098_-_Coca-Cola_glass_bottle_%28Germany%29.jpg"
+      }
+   ]
+}

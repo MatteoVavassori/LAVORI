@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<anagrafica>
+ <dati>
+ <persona>
+ <nome>Alessio </nome>
+ <cognome>Marchesi</cognome>
+<indirizzo>via isonzo 22</indirizzo>
+<citta>milano</citta>
+<cap>20008</cap>
+<cellulare>388 341 7820</cellulare>
+ </persona>
+ </dati>
+ <dati>
+ <persona>
+ <nome>Gioele</nome>
+ <cognome>Farini</cognome>
+<indirizzo>via monte grappa 12</indirizzo>
+<citta>torino</citta>
+<cap>74323</cap>
+<cellulare>341 561 6235</cellulare>
+ </persona>
+ </dati>
+ <dati>
+ <persona>
+ <nome>Paolo</nome>
+ <cognome>Sommaruga</cognome>
+<indirizzo>via verdi 12</indirizzo>
+<citta>Bari</citta>
+<cap>19165</cap>
+<cellulare>320 390 8846</cellulare>
+ </persona>
+ </dati>
+ <dati>
+ <persona>
+ <nome>Bastianazzo</nome>
+ <cognome>Vismara</cognome>
+<indirizzo>via filippo corridoni 11</indirizzo>
+<citta>Genova</citta>
+<cap>24501</cap>
+<cellulare>351 825 1838</cellulare>
+ </persona>
+ </dati>
+ </anagrafica>

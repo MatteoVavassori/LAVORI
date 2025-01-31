@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <body onload="loadXMLDoc()">
+        <h1>Lettura file XML</h1>
+        <div>
+            <select id="selezioneUtente">
+                <option selected>Seleziona utente</option>
+                <option id="0" value="utente1"></option>
+                <option id="1" value="utente2"></option>
+                <option id="2" value="utente3"></option>
+                <option id="3" value="utente4"></option>
+                <option id="4" value="utente5"></option>
+            </select>
+        </div>
+        <div>
+            <table border="1" id="demo"></table>
+        </div>
+        <script>
+          
+            function loadXMLDoc() {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+                        lista(this)
+                    }
+                };
+                xhttp.open("GET", "https://raw.githubusercontent.com/AlessioMarchesii/LAVORI/refs/heads/main/anagrafica", true);
+                xhttp.send();
+            }
+
+            function tabella(xml, utenteSelezionato) {
+                var xmlDoc = xml.responseXML;
+                var table = "<tr><th></th><th></th></tr>";
+                var x = xmlDoc.getElementsByTagName("persona");
+
+                for(var i=0; i<x.length; i++) {
+                    if(document.getElementById(i).value == utenteSelezionato) {
+                        table = "<tr><td>Nome</td><td>" +
+                                x[i].getElementsByTagName("nome")[0].childNodes[0].nodeValue +
+                                "</td></tr>" + 
+                                "<tr><td>Cognome</td><td>" + 
+                                x[i].getElementsByTagName("cognome")[0].childNodes[0].nodeValue +
+                                "</td></tr>" +
+                                "<tr><td>indirizzo</td><td>" +
+                                x[i].getElementsByTagName("indirizzo")[0].childNodes[0].nodeValue +
+                                "</td></tr>" +
+                                "<tr><td>cellulare</td><td>" +
+                                x[i].getElementsByTagName("cellulare")[0].childNodes[0].nodeValue +
+                                "</td></tr>" +
+                                "<tr><td>Città</td><td>" +
+                                x[i].getElementsByTagName("citta")[0].childNodes[0].nodeValue +
+                                "</td></tr>" +
+                                "<tr><td>cap</td><td>" +
+                                x[i].getElementsByTagName("cap")[0].childNodes[0].nodeValue +
+                                "</td></tr>";
+                    }
+                }
+
+                document.getElementById("demo").innerHTML = table;
+            }
+
+           
+            function lista(xml) {
+                var xmlDoc = xml.responseXML;
+                var x = xmlDoc.getElementsByTagName("persona");
+                for(var i=0; i<x.length; i++) {
+                    document.getElementById(i).innerHTML = x[i].getElementsByTagName("nome")[0].childNodes[0].nodeValue + " " + x[i].getElementsByTagName("cognome")[0].childNodes[0].nodeValue;
+                }
+
+                document.getElementById("selezioneUtente").addEventListener("change", function() {
+                    var utenteSelezionato = this.value;
+
+                   
+                    tabella(xml, utenteSelezionato);
+                })
+            }
+        </script>
+    </body>
+</html>
